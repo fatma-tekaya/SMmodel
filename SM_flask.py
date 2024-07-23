@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 # Load the trained model
-model = joblib.load('C:/Users/octanet/Desktop/PFE/smartwatchModel/model.pkl')
+model = joblib.load('./model.pkl')
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -32,4 +32,4 @@ def predict():
     return jsonify({'predictions': predictions.tolist()})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5002)
